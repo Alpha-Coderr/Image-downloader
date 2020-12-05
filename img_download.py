@@ -2,9 +2,9 @@ import requests
 import os
 import cv2
 
-def download_image(facetype):
-    urls_file=f'urls/{facetype}.txt'
-    output_dir=f'images/{facetype}'
+def download_image('url.txt'):
+    urls_file='urls/url.txt'
+    output_dir='images'
 
     #Creating output directory if it doesnot exists
     if not os.path.exists(output_dir):
@@ -27,7 +27,7 @@ def download_image(facetype):
         except:
             print(f'[Info] Error Downloading: {img_path}')
 
-        # Deleting image if opencv cant't open it
+        
         image = cv2.imread(img)
         if image is None:
             print(f'[Info] Image is None! Deleting: {img_path}')
